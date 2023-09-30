@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --dark-gray: #8c8c8c;
+    --very-dark: #696969;
+
+    --text: 1rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-family: 'Alata', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    max-width: 1700px;
+    margin: 0 auto;
+}
+
+a { 
+    text-decoration: none;
+    color: var(--white);
+}
+li { list-style: none; }
+
+.title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 300;text-transform: uppercase;
+}
+.none,
+.sm { display: none;}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 10%;
+    transition: all .5s ease;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+
+    & li {
+        position: relative;
+    }
+}
+
+nav ul li:hover::after {
+    position: absolute;
+    bottom: -.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+    width: 40px;
+    height: 3px;
+    background-color: white;
+}
+
+.menu {
+    display: none;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    z-index: 5;
+
+    background: url("./images/desktop/image-hero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero {
+    position: absolute;
+    left: 10%;
+    top: 60%;
+    transform: translateY(-50%);
+
+    max-width: 700px;
+    padding: 2rem;
+    color: var(--white);
+    border: 5px solid var(--white);
+
+    & h1 {
+        font-size: clamp(2.5rem, 5vw, 5rem);
+    }
+}
+
+#interactive {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 10%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.interactive-left {
+    width: 80%;
+} 
+
+.interactive-right {
+    position: absolute;
+    right: 10%;
+    bottom: 15%;
+    max-width: 600px;
+    padding: 7rem 0 0 7rem;
+    background-color: var(--white);
+
+    & h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: 1.5rem;
+        color: var(--black);
+    }
+
+    .sub {
+        font-size: var(--text);
+        color: var(--very-dark);
+        line-height: 1.6;
+    }
+}
+
+
+#creations {
+    width: 100%;
+    height: 100px;
+}
+
+.creations {
+    width: 100%;
+    padding-inline: 10%;
+    padding-bottom: 5rem;
+}
+
+.creation-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1rem;
+    margin-bottom: 2rem;
+
+    & h3 {
+        font-size: clamp(2rem, 3vw, 3rem);
+    }
+
+    & button {
+        background: none;
+        border: 3px solid var(--very-dark);
+        padding: .5rem 2rem;
+        letter-spacing: 2px;
+        font-size: var(--text);
+        cursor: pointer;
+        transition: all .3s ease;
+    }
+
+    & button:hover {
+        background-color: var(--black);
+        color: var(--white);
+    }
+}
+
+.creations-list {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.creaion-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    & h4 {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 1.5rem;
+        color: var(--white);
+        max-width: 8ch;
+        font-size: 1.7rem;
+    }
+    
+    & img {
+        object-fit: contain;
+        transition: all .4s ease;
+    }
+}
+.creaion-card:hover img {
+    scale: 1.1;
+    opacity: .8;
+}
+
+footer {
+    width: 100%;
+    padding: 2.5rem 10%;
+    background-color: var(--black);
+}
+
+.footer-header {
+    margin-bottom: 1rem;
+}
+
+.footer-nav,
+.footer-header,
+.copy-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-menus,
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.links { gap: 1rem; }
+
+.copy-right {
+    color: var(--dark-gray);
+    font-size: .8rem;
+}
+
+@media (max-width: 600px) {
+    nav { padding: 5%; }
+    nav ul,
+    .lg { display: none; }
+    .menu,
+    .sm { display: block; }
+    header {
+        background: url("./images/mobile/image-hero.jpg");
+    }
+
+    nav ul {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        z-index: 15;
+        width: 100%;
+        height: 100%;
+
+        background-color: rgba(0, 0, 0, .8);
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .hero {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 1rem;
+        border-width: 3px;
+    }
+
+    #interactive {
+        flex-direction: column;
+        padding: 1rem;
+        justify-content: center ;
+        gap: 1rem;
+        height: 80vh;
+    }
+
+    #interactive > * {
+        width: 100%;
+        & img {
+            width: 100%;
+            object-fit: cover;
+        }   
+    }
+
+    .interactive-right {
+        position: relative;
+        padding: .5rem;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    .creations { padding-inline: 5%; }
+    
+    .creation-header {
+        flex-direction: column;
+        gap: .5rem;
+
+        & button {
+            width: 100%;
+        }
+    }
+
+    .footer-menus,
+    .footer-nav,
+    .footer-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+.scrolled {
+    background-color: rgb(23, 26, 62);
+}
