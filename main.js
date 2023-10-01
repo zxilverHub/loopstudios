@@ -14,6 +14,6 @@ let isOpen = false;
 
 menu.addEventListener("click", ()=> {
     isOpen = !isOpen
-    icon.src = `/images/icon-${isOpen? "close": "hamburger"}.svg`
+    icon.src = `./images/icon-${isOpen? "close": "hamburger"}.svg`
     links.setAttribute(`style`, `display: ${isOpen? "flex": "none"}`)
 })
